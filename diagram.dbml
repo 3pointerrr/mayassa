@@ -1,0 +1,68 @@
+Project mayaasa {
+  database_type: 'PostgreSQL'
+  Note: 'this website provide share historical things'
+}
+
+Table AboutUs as AU {
+    id int [pk, increment]
+    title varchar(20) [unique, not null]
+    description text [unique, not null]
+    image image [not null]
+    image2 image [not null]
+    video file [not null]
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}
+
+Table SocialMedia as SM {
+    id int [pk, increment]
+    title varchar(20) [unique, not null]
+    url url
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}
+
+Table Contact as C {
+    id int [pk, increment]
+    name varchar(100) [not null]
+    email varchar(100) [unique, not null]
+    phone varchar(20) [unique, not null]
+    subject varchar(50)
+    message text [not null]
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}
+
+Table Category as CAT {
+    id int [pk, increment]
+    title varchar(20) [unique, not null]
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}
+
+Table Product as P {
+    id int [pk, increment]
+    title varchar(20) [unique, not null]
+    description text [unique, not null]
+    photo image [unique, not null]
+    size varchar (20) [not null]
+    Category int [ref: > CAT.id]
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}
+
+Table Banner as B {
+    id int [pk, increment]
+    title varchar(20) [unique, not null]
+    image image [unique, not null]
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}
+
+Table SubmitOrder as SO {
+    id int [pk, increment]
+    title varchar(20) [not null]
+    image image [unique, not null]
+    created timestamptz [not null]
+    modified timestamptz [not null]
+}

@@ -4,7 +4,7 @@ class TimeStampMixin(models.Model):
     
     created = models.DateTimeField(
         auto_now_add=True,
-        help_text=('automatic insertation of record')
+        help_text=('automatic insertion of record')
     )
 
     modified = models.DateTimeField(
@@ -34,7 +34,7 @@ class PictureOperationMixin(models.Model):
 
     alternate_text = models.CharField(
         max_length=110,
-        help_text='describe about photo that is uoloaded.'
+        help_text='describe about photo that is uploaded.'
                 'please write a good description for search engines'
     )
 

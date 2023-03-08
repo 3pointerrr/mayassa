@@ -50,7 +50,7 @@ Table Product as P {
 }
 
 
-// ////////////////////////
+// to do 
 Table HowItWork as HIW {
   id int [pk, increment]
   title varchar(20) [unique,not null]

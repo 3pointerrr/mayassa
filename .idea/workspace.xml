@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42b91a06-d534-47dc-869d-2fa1edb0a68e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/howitwork/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/howitwork/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernel/settings/packages/libraries.py" beforeDir="false" afterPath="$PROJECT_DIR$/kernel/settings/packages/libraries.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

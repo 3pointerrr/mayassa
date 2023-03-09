@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 class HowItWorkAdmin(admin.ModelAdmin):
     list_display = (
         'title',
-        'summary',
+        'priority',
 
     )
 

@@ -12,14 +12,14 @@ class DimensionValidator(BaseValidator):
         self.height = height
 
     def __call__(self, value):
-        with value.file.open() as pic:
-            width, height = get_image_dimensions(pic)
-            if(width > self.width or height > self.height):
-                raise ValidationError(
-                    _(
+        pic =value.file.open()
+        width, height = get_image_dimensions(pic)
+        if(width > self.width or height > self.height):
+            raise ValidationError(
+                _(
                     
-                    f"Expected dimension is:[{self.width}w , {self.height}h]"
-                    f"but actual is [{width}w {height}h]"
+                f"Expected dimension is:[{self.width}w , {self.height}h]"
+                f"but actual is [{width}w {height}h]"
                     
-                    )
                 )
+            )

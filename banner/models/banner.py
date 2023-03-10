@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from painless.mixin_files.mixins import TimeStampMixin
+from painless.models.validators import DimensionValidator
+
 
 class Banner(TimeStampMixin):
     title = models.CharField(
@@ -16,7 +18,10 @@ class Banner(TimeStampMixin):
         max_length=110,
         height_field='height_field',
         width_field='width_field',
-        upload_to='banner/'
+        upload_to='banner/',
+        validators=[
+        DimensionValidator(1920,1080),
+        ]
     )
 
     height_field = models.PositiveSmallIntegerField(

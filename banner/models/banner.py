@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from painless.mixin_files.mixins import TimeStampMixin
 from painless.models.validators import DimensionValidator
-
+from django.core.validators import FileExtensionValidator
 
 class Banner(TimeStampMixin):
     title = models.CharField(
@@ -21,6 +21,7 @@ class Banner(TimeStampMixin):
         upload_to='banner/',
         validators=[
         DimensionValidator(1920,1080),
+        FileExtensionValidator("jpeg","png","PNG","JEPG","JPG","jpg")
         ]
     )
 

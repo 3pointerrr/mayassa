@@ -13,7 +13,7 @@ class TestSocialMediaModel(TestCase):
         self.social_media_DGL.create_social_media(total=3)
 
     def test_str_method(self):
-        soc = SocialMedia.objects.first()
+        soc = SocialMedia.objects.first() #SocialMedia.objects.get(id=1)
         self.assertEqual(str(soc), soc.title)
 
 

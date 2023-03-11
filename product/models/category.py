@@ -1,6 +1,6 @@
 from django.db import models
 
-from painless.mixin_files.mixins import TimeStampMixin
+from painless.models.mixin_files import TimeStampMixin
 
 class Category(TimeStampMixin):
 
@@ -10,6 +10,10 @@ class Category(TimeStampMixin):
         null=False,
         help_text='category name'
     )
+
+    class Meta:
+        verbose_name = ("Category")
+        verbose_name_plural = ("Categories")
 
     def __str__(self) -> str:
         return self.title

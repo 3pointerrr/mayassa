@@ -1,6 +1,6 @@
 from django.db import models
 
-from painless.mixin_files.mixins import TimeStampMixin
+from painless.models.mixin_files import TimeStampMixin
 
 class SocialMedia(TimeStampMixin):
 

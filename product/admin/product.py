@@ -62,8 +62,8 @@ class ProductAdmin(admin.ModelAdmin):
             ),              #show-hide guruh
             'fields': (
                 'picture',
-                'height_field',
                 'width_field',
+                'height_field',
             )
         })
 )

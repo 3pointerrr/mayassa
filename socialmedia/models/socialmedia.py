@@ -15,3 +15,9 @@ class SocialMedia(TimeStampMixin):
         max_length=250,
         help_text='url of socialmedia'
     )
+
+    def __str__(self):
+        return self.title
+    def __repr__(self):
+        return self.title
+    

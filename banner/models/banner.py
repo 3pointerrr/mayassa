@@ -21,7 +21,7 @@ class Banner(TimeStampMixin):
         upload_to='banner/',
         validators=[
         DimensionValidator(1920,1080),
-        FileExtensionValidator("jpeg","png","PNG","JEPG","JPG","jpg")
+        FileExtensionValidator("png","PNG","jpg")
         ]
     )
 

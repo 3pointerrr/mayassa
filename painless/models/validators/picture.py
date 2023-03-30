@@ -7,12 +7,14 @@ from django.utils.deconstruct import deconstructible
 
 @deconstructible
 class DimensionValidator(BaseValidator):
+    code = "dimension value"
+
     def __init__(self,width,height):
         self.width = width
         self.height = height
 
     def __call__(self, value):
-        pic =value.file.open()
+        pic = value.file.open()
         width, height = get_image_dimensions(pic)
         if(width > self.width or height > self.height):
             raise ValidationError(
@@ -21,5 +23,6 @@ class DimensionValidator(BaseValidator):
                 f"Expected dimension is:[{self.width}w , {self.height}h]"
                 f"but actual is [{width}w {height}h]"
                     
-                )
+                ),
+                code=self.code
             )

@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from product.models import product
-from product.repository.generator.socialmedia import SocialMediaDataGeneratorLayer
+from product.repository.generator.product import ProductDataGeneratorLayer
 
 
 
@@ -9,17 +9,17 @@ class TestSocialMediaModel(TestCase):
 
 
     def setUp(self):
-        self.social_media_DGL =  SocialMediaDataGeneratorLayer()
-        self.social_media_DGL.create_social_media(total=3)
+        self.product_DGL =  ProductDataGeneratorLayer()
+        self.product_DGL.create_category(total=3)
 
     def test_str_method(self):
-        soc = SocialMedia.objects.first()
-        self.assertEqual(str(soc), soc.title)
+        pro = product.objects.first()
+        self.assertEqual(str(pro), pro.title)
 
 
     def test_verbose_name(self):
-        self.assertEqual(SocialMedia._meta.verbose_name,"social media")
+        self.assertEqual(product._meta.verbose_name,"product")
         self.assertEqual(
-            SocialMedia._meta.verbose_name_plural,
+            product._meta.verbose_name_plural,
             "social medias"
             )

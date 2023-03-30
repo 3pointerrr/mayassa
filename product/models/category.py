@@ -5,7 +5,7 @@ from painless.mixin_files.mixins import TimeStampMixin
 class Category(TimeStampMixin):
 
     title = models.CharField(
-        max_length=20,
+        max_length=100,
         unique=True,
         null=False,
         help_text='category name'
@@ -14,5 +14,5 @@ class Category(TimeStampMixin):
     def __str__(self) -> str:
         return self.title
     
-    def __refr__(self) -> str:
+    def __repr__(self) -> str:
         return self.title

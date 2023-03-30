@@ -12,7 +12,9 @@ class ProductAdmin(admin.ModelAdmin):
         'created',
         'modified',
     )
-
+    autocomplete_fields = (
+        'category',
+                )
 #search 
     search_fields = (
         'title',

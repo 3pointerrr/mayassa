@@ -1,1 +1,1 @@
-from .socialmedia import SocialMediaDataGeneratorLayer as social_media_DGL
+from .product import ProductDataGeneratorLayer as product_DGL

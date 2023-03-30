@@ -10,7 +10,7 @@ class TestSocialMediaModel(TestCase):
 
     def setUp(self):
         self.social_media_DGL =  SocialMediaDataGeneratorLayer()
-        self.social_media_DGL.create_social_media(total=3)
+        self.social_media_DGL.create_social_media(total=10)
 
     def test_str_method(self):
         soc = SocialMedia.objects.first() #SocialMedia.objects.get(id=1)

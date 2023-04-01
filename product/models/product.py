@@ -3,6 +3,8 @@ from django.db import models
 from painless.mixin_files.mixins import PictureOperationMixin,TimeStampMixin
 
 from django.utils.translation import gettext_lazy as _
+
+from ..repository.manager import ProductDataAccessLayerManager
 class Product(PictureOperationMixin,TimeStampMixin):
 
     title = models.CharField(
@@ -39,8 +41,8 @@ class Product(PictureOperationMixin,TimeStampMixin):
         help_text='photo of product',
     )
 
-
-    
+    dal = ProductDataAccessLayerManager()
+    objects = models.Manager()
     alternate_text = models.CharField(
         max_length=110,
         help_text=_("banner")

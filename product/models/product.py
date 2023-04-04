@@ -26,6 +26,15 @@ class Product(PictureOperationMixin,TimeStampMixin):
         help_text='size of product'
 
     )
+
+    tags = models.ManyToManyField(
+        "Tag",
+        blank=True,
+        verbose_name="Tags",
+        related_name="products",
+        help_text=_("access to the related tag(s) of the products")
+    )
+
     category = models.ForeignKey(
         'Category',
         on_delete=models.CASCADE,

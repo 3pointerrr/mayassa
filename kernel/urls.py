@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-if config("DEBUG_MODE",default=False,cast = bool):
+""" if config("DEBUG_MODE",default=False,cast = bool):
 
     urlpatterns += static(
         settings.STATIC_URL,
@@ -33,3 +33,4 @@ if config("DEBUG_MODE",default=False,cast = bool):
         settings.MEDIA_URL,
         document_root = settings.MEDIA_ROOT
     )
+"""

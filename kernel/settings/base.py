@@ -13,9 +13,6 @@ DEFAULT_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'product',
-    'socialmedia'
-    
 ]
 
 MIDDLEWARE = [

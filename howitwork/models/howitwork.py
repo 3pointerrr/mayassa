@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from painless.mixin_files.mixins import TimeStampMixin
 # Create your models here.
 class HowItWork(TimeStampMixin):
+    """ """
     title = models.CharField(
         _("Title"),
         max_length=20,
@@ -42,12 +43,13 @@ class HowItWork(TimeStampMixin):
         null = True,
         blank = True,
         editable=False,
-        help_text=_("size of the picture height ")
+        help_text=_("width of the picture ")
     )
 
     alternate_text = models.CharField(
         max_length=110,
-        help_text=_("product picture")
+        help_text=_("alternate for `how it work` image for situation like when image"
+                    " can not load correctly")
     )
     
     def __str__(self):

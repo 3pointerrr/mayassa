@@ -6,7 +6,7 @@ from product.models.product import Product
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 
-#namayesh sutunha
+# display columns
     list_display = (
         'title',
         'created',
@@ -15,31 +15,31 @@ class ProductAdmin(admin.ModelAdmin):
     autocomplete_fields = (
         'category',
                 )
-#search 
+# search 
     search_fields = (
         'title',
     )
-#zire search hint mizare
+#search hint
     search_help_text = 'search by title'
 
-#sakht jadval filterha
+#add filter section
     list_filter = (
         'created',
         'modified',
     )
 
-#save va dokmehaye payin balaham bashe
+#add save on top of the page
     save_on_top=True
 
 
-#baraye security centere payin
+# make fields read only due to security 
     readonly_fields = (
         'created',
         'modified',
         'height_field',
         'width_field'
     )
-#ghabeliat guruh bandi kardan
+# grouping option 
     fieldsets = (
         (('product information'), {
             'fields': (
@@ -58,10 +58,20 @@ class ProductAdmin(admin.ModelAdmin):
                 'alternate_text'
             )
         }),
+        
+        (('tag choose'), {
+            'classes': (
+                'collapse',
+            ),
+            'fields': (
+                'tags',
+            )
+        }),
+        
         (('picture zone'), {
             'classes': (
                 'collapse',
-            ),              #show-hide guruh
+            ),              #show-hide group
             'fields': (
                 'picture',
                 'height_field',

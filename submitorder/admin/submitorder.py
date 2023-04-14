@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 @admin.register(SubmitOrder)
 class HowItWorkAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         'title',
 

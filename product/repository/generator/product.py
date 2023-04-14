@@ -26,6 +26,7 @@ class ProductDataGeneratorLayer(BaseDataGenerator):
             objs,
             batch_size=10_000
         )
+        return categories
     def create_tags(self,total):
         objs = [
             Tag(
@@ -36,7 +37,8 @@ class ProductDataGeneratorLayer(BaseDataGenerator):
         tags = Tag.objects.bulk_create(
             objs,
             batch_size=10_000
-        )    
+        )
+        return tags   
         
     def create_product(self,categories,total):
 
@@ -72,3 +74,4 @@ class ProductDataGeneratorLayer(BaseDataGenerator):
             item_per_object
         )
         result = list(tqdm(map(joiner,products)))
+        return result

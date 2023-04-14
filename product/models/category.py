@@ -3,6 +3,7 @@ from django.db import models
 from painless.mixin_files.mixins import TimeStampMixin
 
 class Category(TimeStampMixin):
+    """ """
 
     title = models.CharField(
         max_length=100,

@@ -6,25 +6,25 @@ from socialmedia.models.socialmedia import SocialMedia
 @admin.register(SocialMedia)
 class SocialMediaAdmin(admin.ModelAdmin):
 
-    #namayesh sutunha
+    
     list_display = (
         'title',
         'created',
         'modified',
     )
 
-#search 
+    # add search section for title
     search_fields = (
         'title',
     )
-#zire search hint mizare
+    # search hint for search section
     search_help_text = 'search by title'
 
-#sakht jadval filterha
+    # with this option you can filter by created and modified
     list_filter = (
         'created',
         'modified',
     )
 
-#save va dokmehaye payin balaham bashe
+    # with this option now we have another save option on top 
     save_on_top=True

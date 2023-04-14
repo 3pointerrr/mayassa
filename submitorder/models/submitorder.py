@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from painless.mixin_files.mixins import TimeStampMixin
 
 class SubmitOrder(TimeStampMixin):
+    """ """
     title = models.CharField(
         _("Title"),
         max_length=20,

@@ -1,16 +1,17 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from painless.mixin_files.mixins import TimeStampMixin
+from painless.mixin_files.mixins import TimeStampMixin,PictureOperationMixin
 from painless.models.validators import DimensionValidator
 from django.core.validators import FileExtensionValidator
-
-class Banner(TimeStampMixin):
+from painless.models import pict
+class Banner(TimeStampMixin,PictureOperationMixin):
+    """ these are banner models of the mayassa website including title and picture """
     title = models.CharField(
         _("Title"),
         max_length=20,
         unique=True,
         null=False,
-        help_text=_("how it work title")
+        help_text=_("title of banner")
     )
 
     picture = models.ImageField(
@@ -25,25 +26,10 @@ class Banner(TimeStampMixin):
         ]
     )
 
-    height_field = models.PositiveSmallIntegerField(
-        _("height_field"),
-        null = True,
-        blank = True,
-        editable=False,
-        help_text=_("size of the picture height ")
-    )
-    
-    width_field = models.PositiveSmallIntegerField(
-        _("width_field"),
-        null = True,
-        blank = True,
-        editable=False,
-        help_text=_("size of the picture height ")
-    )
-
     alternate_text = models.CharField(
         max_length=110,
-        help_text=_("banner")
+        help_text=_("alternate for banner for situation like when image"
+                    " is not loaded correctly")
     )
     
     def __str__(self):

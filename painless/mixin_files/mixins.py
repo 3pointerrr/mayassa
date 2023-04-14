@@ -1,6 +1,8 @@
 from django.db import models
 
 class TimeStampMixin(models.Model):
+    """ we brought created and modified here so we wont 
+    write them in every model"""
     
     created = models.DateTimeField(
         auto_now_add=True,
@@ -13,10 +15,14 @@ class TimeStampMixin(models.Model):
     )
 
     class Meta:
+        """ the model is marked as abstract and Django will not create a
+        database table for this model. Instead, it will be used as a base
+        class for other models to inherit from."""
         abstract =True
         
 
 class PictureOperationMixin(models.Model):
+    """ """
 
     height_field = models.PositiveSmallIntegerField(
         null=True,
@@ -39,4 +45,7 @@ class PictureOperationMixin(models.Model):
     )
 
     class Meta:
+        """ the model is marked as abstract and Django will not create a
+        database table for this model. Instead, it will be used as a base
+        class for other models to inherit from."""
         abstract =True

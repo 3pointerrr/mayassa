@@ -5,11 +5,14 @@ from product.models.product import Product
 
 
 class ProductInlineAdmin(admin.StackedInline):
+    
     model = Product
     extra = 1
     show_change_link = True
+
 @admin.register(Tag)
-class CategoryAdmin(admin.ModelAdmin):
+class TagAdmin(admin.ModelAdmin):
+    
 
     list_display = (
         'title',
@@ -20,7 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = (
         'title',
     )
-    inlines = (ProductInlineAdmin,)
+    #inlines = (ProductInlineAdmin,)
     search_help_text = 'search by title'
 
     list_filter = (

@@ -5,11 +5,13 @@ from product.models.product import Product
 
 
 class ProductInlineAdmin(admin.StackedInline):
+    """ """
     model = Product
     extra = 1
     show_change_link = True
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """ """
 
     list_display = (
         'title',

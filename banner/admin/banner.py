@@ -6,7 +6,12 @@ from django.utils.translation import gettext_lazy as _
 
 
 @admin.register(Banner)
-class HowItWorkAdmin(admin.ModelAdmin):
+class Banner(admin.ModelAdmin):
+    """ admin for Banner include list display , and list display include 
+    title because we want user to just see the title and image, in this list we 
+    can see create and modified so we can filter content by created and modified
+    we have some options in readonly because the values are auto completing with 
+    program , by option add on top user has save option on top of the page and down"""
     list_display = (
         'title',
 

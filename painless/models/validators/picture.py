@@ -7,6 +7,15 @@ from django.utils.deconstruct import deconstructible
 
 @deconstructible
 class DimensionValidator(BaseValidator):
+    """
+        It is used to validate the dimensions of
+        an uploaded image file. The validator checks 
+        if the width and height of the image are less
+        than or equal to the specified dimensions in 
+        the constructor. If the dimensions of the image
+        exceed the specified dimensions, a ValidationError 
+        is raised with a custom error message.
+    """
     code = "dimension value"
 
     def __init__(self,width,height):

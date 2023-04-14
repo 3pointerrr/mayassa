@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from ..repository.manager import ProductDataAccessLayerManager
 class Product(PictureOperationMixin,TimeStampMixin):
+    """ """
 
     title = models.CharField(
         max_length=255,

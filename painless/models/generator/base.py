@@ -16,7 +16,7 @@ from mimesis import (
 # from essential_generators import DocumentGenerator
 
 
- 
+#create base data genarator
 class BaseDataGenerator():
 
     def __init__(self, locale='en'):

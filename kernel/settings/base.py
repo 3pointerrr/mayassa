@@ -14,7 +14,10 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 
     'product',
-    'socialmedia'
+    'socialmedia',
+
+
+    'rest_framework',
     
 ]
 
@@ -73,3 +76,12 @@ MEDIA_URL = config('MEDIA_URL')
 MEDIA_ROOT = config('MEDIA_UPLOAD_DIR')
 
 FIXTURES_DIRS =config('FIXTURES_TEST_DIRS', cast=tuple)
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

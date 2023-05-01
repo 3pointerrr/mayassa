@@ -1,7 +1,5 @@
 from django.core.management.base import BaseCommand
 
-
-
 from product.repository.generator import BDG
 
 #in dastoorat runevisi az doc commands be hamin esmha!

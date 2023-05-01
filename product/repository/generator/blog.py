@@ -24,6 +24,7 @@ class BlogDataGeneratorLayer(BaseDataGenerator):
             for i in tqdm(range(total))
         ]
                 #comprihension khat payin
+                
         categories = Category.objects.bulk_create(objs,batch_size=10_000)
                     #bulk_create besurate dasteyi mire misaze
 
